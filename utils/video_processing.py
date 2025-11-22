@@ -1,6 +1,9 @@
 import cv2
+from utils.logger import get_logger
 from PIL import Image
 from utils.load_config import load_config
+
+log = get_logger(__name__)
 
 config = load_config()
 DEVICE = config['model']['DEVICE']
@@ -14,20 +17,20 @@ class VideoFrameExtractor:
 
     def extract(self, video_path, label):
 
-        print(f"Processing: {video_path}")
-        
+        log.info(f"Processing: {video_path}")
         # Explicitly convert Path object to string for robust cv2 compatibility
         cap = cv2.VideoCapture(str(video_path))
         
         # Ensure we read the file
         if not cap.isOpened():
-            print(f"Error: Failed to open video file: {video_path}")
+            log.info(f"Error: Failed to open video file: {video_path}")
             return [], []
 
         fps = cap.get(cv2.CAP_PROP_FPS)
         # Calculate how many native frames to skip to meet the target sample_rate_fps
         if fps > 0:
             frame_skip_interval = int(round(fps / self.sample_rate_fps))
+            log.info(f"Video FPS: {fps}, Target sample rate: {self.sample_rate_fps}, Frame skip interval: {frame_skip_interval}")
             if frame_skip_interval == 0:
                 frame_skip_interval = 1
         else:

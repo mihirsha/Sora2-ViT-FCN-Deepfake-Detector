@@ -7,6 +7,9 @@ import pandas as pd
 from utils.dataset import FeatureDataset
 from model.fcn_classifier import FCN_Classifier
 from utils.load_config import load_config
+from utils.logger import get_logger
+
+log = get_logger(__name__)
 
 def train_fcn(features_df, config):
     """Training loop for the FCN on saved features."""
@@ -69,14 +72,14 @@ def train_fcn(features_df, config):
         avg_val_loss = val_loss / len(val_dataset)
         val_accuracy = correct / len(val_dataset)
         
-        print(f"Epoch {epoch+1}: Train Loss: {avg_train_loss:.4f}, Val Loss: {avg_val_loss:.4f}, Val Acc: {val_accuracy:.4f}")
+        log.info(f"Epoch {epoch+1}: Train Loss: {avg_train_loss:.4f}, Val Loss: {avg_val_loss:.4f}, Val Acc: {val_accuracy:.4f}")
         
         # Save best model based on validation loss
         if avg_val_loss < best_val_loss:
             best_val_loss = avg_val_loss
             # Save the trained model weights to Google Drive
             torch.save(model.state_dict(), MODEL_WEIGHTS_PATH)
-            print("Model saved!")
+            log.info("Model saved!")
             
     return model
 

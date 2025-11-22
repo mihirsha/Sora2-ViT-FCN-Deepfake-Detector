@@ -5,9 +5,6 @@
 # PROJECT PATHS
 paths:
   base_dir: "."
-  fake_videos_sub_dir: "data/train/fake_videos"
-  real_videos_sub_dir: "data/train/real_videos"
-  feature_output_file: "data/train/feature.csv"
   model_weights_path: "ckpt/fcn_detector.pth"
 
 # MODEL CONFIGURATION
@@ -18,10 +15,20 @@ model:
 
 # TRAINING AND SAMPLING PARAMETERS
 training:
+  fake_videos_sub_dir: "data/train/fake_videos"
+  real_videos_sub_dir: "data/train/real_videos"
+  feature_output_file: "data/train/feature.csv"
   epochs: 20
   batch_size: 256
   learning_rate: 0.0001
-  
+
+# TESTING PARAMETERS
+testing:
+  test_videos_sub_dir: "data/test"
+  feature_output_file: "data/test/feature.csv"
+  threshold: 0.5
+  sample_rate_fps: 10
+
 # VIDEO PROCESSING PARAMETERS
 video_processing:
   frame_sample_rate_fps: 10
