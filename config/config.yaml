@@ -1,0 +1,27 @@
+# -----------------------------------------------------------------
+# Configuration file for Sora2 Fake Video Detection
+# -----------------------------------------------------------------
+
+# PROJECT PATHS
+paths:
+  base_dir: "."
+  fake_videos_sub_dir: "data/train/fake_videos"
+  real_videos_sub_dir: "data/train/real_videos"
+  feature_output_file: "data/train/feature.csv"
+  model_weights_path: "ckpt/fcn_detector.pth"
+
+# MODEL CONFIGURATION
+model:
+  feature_dim: 1000
+  image_size: 224
+  device: "cpu"
+
+# TRAINING AND SAMPLING PARAMETERS
+training:
+  epochs: 20
+  batch_size: 256
+  learning_rate: 0.0001
+  
+# VIDEO PROCESSING PARAMETERS
+video_processing:
+  frame_sample_rate_fps: 10
