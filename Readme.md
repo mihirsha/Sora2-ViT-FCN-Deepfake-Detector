@@ -118,9 +118,9 @@ python3 train.py
 ```
 This command trains the FCN classifier using the extracted ViT features. The trained model checkpoint will be saved according to the configuration in `config/config.yaml`.
 
-**Pre-trained Checkpoint:**
+**Trained model:**
 
-Download pre-trained model checkpoint from: [Checkpoint Link](https://example.com/model-checkpoint.pth) *(Add your actual checkpoint link here)*
+Download pre-trained model checkpoint from: [trained fcn model](https://example.com/model-checkpoint.pth)
 
 Place the checkpoint in the appropriate directory as specified in your config file.
 
