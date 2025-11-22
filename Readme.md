@@ -93,8 +93,39 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### Step 3: Preprocessing
+### Step 4: Dataset Preparation
+
+**Download Dataset:**
+
+Download the fake video dataset from: [Fake Videos Dataset](https://example.com/fake-videos-dataset)
+
+Download the real video dataset from: [Real Videos Dataset](https://example.com/real-videos-dataset)
+
+Place the videos in the following structure:
+- Fake videos for training: `data/train/fake_videos/`
+- Real videos for training: `data/train/real_videos/`
+- videos for testing: `data/test/`
+
+### Step 5: Preprocessing
 ```bash
 python3 preprocess.py
 ```
-This command converts videos to frames (as specified in config), extracts features using ViT, and saves them to a CSV file.
+This command converts videos to frames (as specified in config), extracts features using ViT, and saves them to a CSV file (`data/train/viT_features.csv`).
+
+### Step 6: Training
+```bash
+python3 train.py
+```
+This command trains the FCN classifier using the extracted ViT features. The trained model checkpoint will be saved according to the configuration in `config/config.yaml`.
+
+**Pre-trained Checkpoint:**
+
+Download pre-trained model checkpoint from: [Checkpoint Link](https://example.com/model-checkpoint.pth) *(Add your actual checkpoint link here)*
+
+Place the checkpoint in the appropriate directory as specified in your config file.
+
+### Step 7: Testing
+```bash
+python3 test.py
+```
+This command test
