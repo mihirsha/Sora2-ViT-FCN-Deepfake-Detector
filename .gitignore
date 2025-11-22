@@ -1,4 +1,11 @@
 **/__pycache__/
 data/**/*.csv
 data/**/*.mp4
+data/**/.DS_Store
 ckpt/*
+ckpt/.DS_Store
+logs/*
+logs/.DS_Store
+.vscode/
+.idea/
+*.pyc
