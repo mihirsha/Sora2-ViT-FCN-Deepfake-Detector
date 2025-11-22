@@ -93,9 +93,10 @@ pip install -r requirements.txt
 
 **Download Dataset:**
 
-Download the fake video dataset from: [Fake Videos Dataset](https://example.com/fake-videos-dataset)
+Download the fake video dataset from: [Fake Videos Dataset](https://drive.google.com/drive/folders/1q5wy17PUu6mBPgWDpXoSfVzU9t_edLuU?usp=sharing)
+Download the real video dataset MSR-VTT from: [Real Videos Dataset](https://drive.google.com/drive/folders/1-iISO8bHRn7vy_4iNWNLmuClSX9kJkoN?usp=sharing)
 
-Download the real video dataset from: [Real Videos Dataset](https://example.com/real-videos-dataset)
+Videos are not required to train, all you need are the extracted features from viT: [Trained Features](https://drive.google.com/file/d/1uXfVXxwgeV2ps4WlMGZIlTSBqvhw1YzC/view?usp=sharing)
 
 Place the videos in the following structure:
 - Fake videos for training: `data/train/fake_videos/`
@@ -116,7 +117,7 @@ This command trains the FCN classifier using the extracted ViT features. The tra
 
 **Trained model:**
 
-Download pre-trained model checkpoint from: [trained fcn model](https://example.com/model-checkpoint.pth)
+Download trained model from: [trained fcn model](https://drive.google.com/file/d/1qGKogmZ2cTLAxbSJ2970NH2vrfw6C_6F/view?usp=sharing)
 
 Place the checkpoint in the appropriate directory as specified in your config file.
 
