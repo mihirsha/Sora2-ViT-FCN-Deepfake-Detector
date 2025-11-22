@@ -43,11 +43,10 @@ fcn/
 │   │   ├── fake_videos/  (Your fake video files go here, given in config)
 │   │   └── real_videos/  (Your real video files go here, given in config) 
 │   │   │
-│   ├── train/
-│   │   ├── fake_videos/  (Your fake video files go here, given in config)
-│   │   └── real_videos/  (Your real video files go here, given in config) 
-│   │ 
-│   └── viT_features.csv
+│   └── train/
+│       ├── fake_videos/  (Your fake video files go here, given in config)
+│       ├── real_videos/  (Your real video files go here, given in config) 
+│       └── viT_features.csv
 │
 ├── config/
 │   └── config.yaml
