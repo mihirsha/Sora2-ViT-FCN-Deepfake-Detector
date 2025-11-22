@@ -94,6 +94,7 @@ pip install -r requirements.txt
 **Download Dataset:**
 
 Download the fake video dataset from: [Fake Videos Dataset](https://drive.google.com/drive/folders/1q5wy17PUu6mBPgWDpXoSfVzU9t_edLuU?usp=sharing)
+
 Download the real video dataset MSR-VTT from: [Real Videos Dataset](https://drive.google.com/drive/folders/1-iISO8bHRn7vy_4iNWNLmuClSX9kJkoN?usp=sharing)
 
 Videos are not required to train, all you need are the extracted features from viT: [Trained Features](https://drive.google.com/file/d/1uXfVXxwgeV2ps4WlMGZIlTSBqvhw1YzC/view?usp=sharing)
