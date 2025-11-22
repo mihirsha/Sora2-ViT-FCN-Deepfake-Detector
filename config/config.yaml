@@ -17,7 +17,7 @@ model:
 training:
   fake_videos_sub_dir: "data/train/fake_videos"
   real_videos_sub_dir: "data/train/real_videos"
-  feature_output_file: "data/train/feature.csv"
+  feature_output_file: "data/train/viT_features.csv"
   epochs: 20
   batch_size: 256
   learning_rate: 0.0001

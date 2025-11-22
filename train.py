@@ -86,7 +86,7 @@ def train_fcn(features_df, config):
 if __name__ == "__main__":
     # Load features from CSV
     cfg = load_config()
-    FEATURE_OUTPUT_FILE = cfg["paths"]["feature_output_file"]
+    FEATURE_OUTPUT_FILE = cfg["training"]["feature_output_file"]
     features_df = pd.read_csv(FEATURE_OUTPUT_FILE)
     
     # Train the FCN model
