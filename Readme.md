@@ -37,7 +37,6 @@ Based on "Advance Fake Video Detection via Vision Transformers" [1], which train
 ## Project Structure
 
 ```
-```
 fcn/
 ├── data/
 │   ├── test/
