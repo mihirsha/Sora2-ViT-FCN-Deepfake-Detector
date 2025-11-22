@@ -70,12 +70,24 @@ fcn/
 
 ---
 
-### Step 1: python version installation
+
+### Step 1: Python version installation
 ```bash
 # Install Python 3.12.11 using conda
 conda install python=3.12.11
+```
 
-### Step 2: Environment Setup
+### Step 2: Create and Activate Virtual Environment
+```bash
+# Create a virtual environment (venv)
+python3 -m venv venv
+# Activate the virtual environment
+source venv/bin/activate  # On Linux/Mac
+# For Windows:
+venv\Scripts\activate
+```
+
+### Step 3: Environment Setup
 ```bash
 # Install required packages
 pip install -r requirements.txt
