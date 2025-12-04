@@ -21,6 +21,8 @@ training:
   epochs: 20
   batch_size: 256
   learning_rate: 0.0001
+  train_features_sub_dir: "data/train/viT_train_features.csv"
+  val_features_sub_dir: "data/val/viT_val_features.csv"
 
 # TESTING PARAMETERS
 testing:

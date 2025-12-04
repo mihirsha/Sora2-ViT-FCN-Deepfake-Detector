@@ -11,7 +11,7 @@ from utils.logger import get_logger
 
 log = get_logger(__name__)
 
-def train_fcn(features_df, config):
+def train_fcn(train_features_df, val_features_df, config):
     """Training loop for the FCN on saved features."""
 
     # Retrieve necessary configuration variables
@@ -23,12 +23,8 @@ def train_fcn(features_df, config):
     MODEL_WEIGHTS_PATH = config['paths']['model_weights_path']
     
     # 1. Setup Data Loaders
-    dataset = FeatureDataset(features_df)
-    
-    # Split the dataset 80% for training, 20% for validation
-    train_size = int(0.8 * len(dataset))
-    val_size = len(dataset) - train_size
-    train_dataset, val_dataset = torch.utils.data.random_split(dataset, [train_size, val_size])
+    train_dataset = FeatureDataset(train_features_df)
+    val_dataset = FeatureDataset(val_features_df)
     
     # Use a large batch size (256) for fast training since features are small
     train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True, pin_memory=True)
@@ -86,8 +82,10 @@ def train_fcn(features_df, config):
 if __name__ == "__main__":
     # Load features from CSV
     cfg = load_config()
-    FEATURE_OUTPUT_FILE = cfg["training"]["feature_output_file"]
-    features_df = pd.read_csv(FEATURE_OUTPUT_FILE)
+    TRAIN_FEATURES_FILE = cfg["training"]["train_features_sub_dir"]
+    VAL_FEATURES_FILE = cfg["training"]["val_features_sub_dir"]
+    train_features_df = pd.read_csv(TRAIN_FEATURES_FILE)
+    val_features_df = pd.read_csv(VAL_FEATURES_FILE)
     
     # Train the FCN model
-    train_fcn(features_df, cfg)
+    train_fcn(train_features_df, val_features_df, cfg)

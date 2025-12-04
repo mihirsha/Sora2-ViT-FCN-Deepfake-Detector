@@ -17,7 +17,6 @@ MODEL_WEIGHTS_PATH = config['paths']['model_weights_path']
 THRESHOLD = config['testing']['threshold']
 SAMPLE_RATE = config['testing']['sample_rate_fps']
 
-
 def predict_video_level(model, video_path, feature_extractor_model, preprocess_fn, sample_rate=10):
     """
     Performs frame-level prediction and temporal aggregation for a single video.
@@ -43,7 +42,6 @@ def predict_video_level(model, video_path, feature_extractor_model, preprocess_f
     
     video_score = np.mean(frame_scores)
     return video_score, frame_scores
-
 
 def main():
     """Main execution function for video deepfake detection."""
